@@ -1,3 +1,11 @@
+<% if user_signed_in? %>
+ <div class="jumbotron">
+   <h1>YOUR FAVORITE MOVIES REVIEWED</h1>
+   <p> Hashtag hoodie numblecore selfies. Authentic keffiyeh leggings kickstarter, narwhal jeans shorts xoxo voice austin cardign. organic drinking vinigar freegreen pickeled.</p>
+   <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+ </div>
+ <% end  %>
+
 <div class="row">
   <% @movies.each do |movie| %>
   <div class="col-sm-6 col-md-3">
