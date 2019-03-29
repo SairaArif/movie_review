@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if !user_signed_in? %>
  <div class="jumbotron">
    <h1>YOUR FAVORITE MOVIES REVIEWED</h1>
    <p> Hashtag hoodie numblecore selfies. Authentic keffiyeh leggings kickstarter, narwhal jeans shorts xoxo voice austin cardign. organic drinking vinigar freegreen pickeled.</p>
@@ -13,5 +13,5 @@
       <%= link_to (image_tag movie.image.url(:medium), class: 'image'), movie %>
     </div>
   </div>
-  <% end %>
+<% end %>
 </div>
