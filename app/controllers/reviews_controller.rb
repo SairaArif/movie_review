@@ -4,18 +4,12 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
   # GET /reviews
   # GET /reviews.json
-  def index
-    @reviews = Review.all
-  end
-
-  # GET /reviews/1
-  # GET /reviews/1.json
-  def show
-  end
+  
 
   # GET /reviews/new
   def new
     @review = Review.new
+
   end
 
   # GET /reviews/1/edit
@@ -30,12 +24,13 @@ class ReviewsController < ApplicationController
     @review.movie_id = @movie.id
 
       if @review.save  
-        redirect_to  @movie
+        redirect_to @movie
       else
        render 'new'
       end
     end
-  end
+  
+
 
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
@@ -60,7 +55,7 @@ class ReviewsController < ApplicationController
     end
     
     def set_movie
-      @movie = Movie.find(params [:movie_id])
+      @movie = Movie.find(params[:movie_id])
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
