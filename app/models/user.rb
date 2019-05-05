@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable,  :validatable
    has_many :movies
    has_many :reviews, dependent: :destroy
+
+  validates :email,
+              :presence => true,
+              :uniqueness => {
+                  :case_sensitive => false
+              }
+  validates :name,
+              :presence => true
 end
