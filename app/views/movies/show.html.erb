@@ -44,9 +44,8 @@
         <% else %>
         <% @reviews.each do |review| %>
           <div class="reviews">
-            
-            <p><%= review.comment %></p>
-            
+            <p><%= review.comment %> <span> - <%= review.user.email %></span></p>
+
           </div>
         <% end %>
       <% end %>

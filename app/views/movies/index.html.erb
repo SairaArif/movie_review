@@ -7,6 +7,9 @@
  <% end  %>
 
 <div class="row">
+  <% if @movies.blank? %>
+  No data found.
+  <% end %>
   <% @movies.each do |movie| %>
   <div class="col-sm-6 col-md-3">
     <div class="thumbnail">
